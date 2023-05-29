@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function check(){
+            var firstname = document.getElementById("firstname").value
+            var firstnamecheck = /^[a-zA-Z]+$/
+            console.log(firstname)
+            if(firstname=="" || firstname.length<3){
+                alert("enter your name")
+                return false
+            }
+            if(!firstname.match(firstnamecheck)){
+                alert("enter valid name")
+                return false
+            }
+
+            var num = document.getElementById("number").value
+            var numcheck = /^[0-9]+$/
+            console.log(num)
+            if(num == "" || num.length < 10){
+                alert("Enter valid number")
+                return false
+            }
+            if(!num.match(numcheck)){
+                alert("enter number correctly")
+                return false
+            }
+
+            var email = document.getElementById("email").value
+            var emailcheck = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]{2,3}$/
+            console.log(email)
+            if(email=""){
+                alert("enter email")
+                return false
+            }
+            if(!email.match(emailcheck)){
+                alert("Enter valid mail")
+                return false
+            }
+
+            var pass = document.getElementById("pass").value
+            var passcheck = /^[a-zA-Z0-9!@#$%^&*]{6,16}$/
+            console.log(pass)
+            if(pass = "" || pass.length < 8){
+                alert("password must contain atleast 8 characters")
+                return false
+            }
+            if(!paa.match(passcheck)){
+                alert("Enter valid password")
+                return false
+            }
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return check()">
+        <input id="firstname" placeholder="name"><br>
+        <input id="number" placeholder="number"><br>
+        <input id="email" placeholder="Email"><br>
+        <input id="pass" placeholder="password" type="password">
+        <button>submit</button>
+        
+    </form>
+</body>
+</html>

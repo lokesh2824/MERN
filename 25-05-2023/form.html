@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form.css">
+    <script>
+        function validate(){
+
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value
+            var confirmPassword = document.getElementById("reenterpassword").value;
+            var gender = document.querySelector('input[name="gender"]:checked').value ;
+            var state = document.getElementById('state').value ;
+
+
+            var checkpassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/ ;
+            var checkemail = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]{2,3}$/ ;
+
+            
+            if(!checkemail.test(email)){
+                alert("Enter valid email");
+                return false;
+            }
+            if(!checkpassword.test(password)){
+                alert("Password must contain at least 8 characters, one uppercase letter, one lowercase letter, one digit, and one special character.");
+                return false;
+            }
+            if(password !== confirmPassword){
+                alert("Password should be same");
+                return false;
+            }
+
+
+            console.log(name);
+            console.log(email);
+            console.log(password);
+            console.log(gender);
+            console.log(state);
+ 
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <form class="form" onsubmit="return validate()">
+        <p><input type="text" placeholder="Name" id="name"></p>
+        <p><input type="email" placeholder="email" id="email"></p>
+        <p><input type="password" name="" id="password" placeholder="password"></p>
+        <p><input type="password" name="" id="reenterpassword" placeholder="confirm password"></p>
+        <p><label for="">Select Gender</label>
+            <input type="radio" id="male" name="gender" value="male" >Male
+            <input type="radio" id="female" name="gender" value="female">Female
+            <input type="radio" id="other" name="gender" value="other">Other
+        </p>
+        <p>
+            <label for="">Choose State</label>
+            <select  id="state" >
+                <option value="">Select State</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Goa">Goa</option>
+                <option value="Mumbai">Mumbai</option>
+            </select>
+        </p>
+        <button>Submit</button>
+    </form>
+</body>
+</html>

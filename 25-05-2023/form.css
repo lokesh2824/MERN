@@ -1,0 +1,54 @@
+/* Styles for the form */
+.form {
+    max-width:350px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Styles for form elements */
+  .form p {
+    margin-bottom: 20px;
+    margin-right: 20px;
+
+  }
+  
+  .form input[type="text"],
+  .form input[type="email"],
+  .form input[type="password"],
+  .form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Styles for form labels */
+  .form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  /* Styles for form radio buttons */
+  .form input[type="radio"] {
+    margin-right: 5px;
+  }
+  
+  /* Styles for form error messages */
+  .error {
+    color: red;
+    margin-top: 5px;
+  }
+  
